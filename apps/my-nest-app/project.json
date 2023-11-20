@@ -1,7 +1,7 @@
 {
-  "name": "my-workspace",
+  "name": "my-nest-app",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/my-workspace/src",
+  "sourceRoot": "apps/my-nest-app/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -11,12 +11,12 @@
       "options": {
         "target": "node",
         "compiler": "tsc",
-        "outputPath": "dist/apps/my-workspace",
-        "main": "apps/my-workspace/src/main.ts",
-        "tsConfig": "apps/my-workspace/tsconfig.app.json",
-        "assets": ["apps/my-workspace/src/assets"],
+        "outputPath": "dist/apps/my-nest-app",
+        "main": "apps/my-nest-app/src/main.ts",
+        "tsConfig": "apps/my-nest-app/tsconfig.app.json",
+        "assets": ["apps/my-nest-app/src/assets"],
         "isolatedConfig": true,
-        "webpackConfig": "apps/my-workspace/webpack.config.js"
+        "webpackConfig": "apps/my-nest-app/webpack.config.js"
       },
       "configurations": {
         "development": {},
@@ -27,14 +27,14 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "my-workspace:build"
+        "buildTarget": "my-nest-app:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "my-workspace:build:development"
+          "buildTarget": "my-nest-app:build:development"
         },
         "production": {
-          "buildTarget": "my-workspace:build:production"
+          "buildTarget": "my-nest-app:build:production"
         }
       }
     },
@@ -42,14 +42,14 @@
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/my-workspace/**/*.ts"]
+        "lintFilePatterns": ["apps/my-nest-app/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/my-workspace/jest.config.ts"
+        "jestConfig": "apps/my-nest-app/jest.config.ts"
       }
     }
   },
